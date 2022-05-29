@@ -1,0 +1,19 @@
+<html>
+
+<head>
+    <title>perfection</title>
+</head>
+<body>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="task">
+        <input type="submit">
+    </form>
+    <ul>
+        {% for uniq in unique reversed %}
+        <li> {{uniq | title}}  <a href="delete/{{uniq.id}}"> delete </a></li>
+        {%endfor%}
+    </ul>
+</body>
+</html>
